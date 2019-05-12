@@ -1,0 +1,97 @@
+
+	var url = "http://ns395885.ip-176-31-121.eu/emoncms/feed/fetch.json?ids=8,9,10,11,12,13,14,15,16";
+	
+	var elem = document.documentElement;
+	var corriendo = false;
+	var interval;
+	var pet = 0;
+	var pee = 0;
+	var peth = 0;
+	var peeh = 0;
+	var eet = 0;
+	var eee = 0;
+	var eeth = 0;
+	var eeeh = 0;
+	var cantidad = 0;
+	
+	
+
+
+		
+	function update(){
+		alert("update");
+		xhr_load();
+		alert("salimos");
+		
+		document.getElementById("pet").innerText = pet;
+		document.getElementById("pee").innerText = pee;
+		document.getElementById("peth").innerText = peth;
+		document.getElementById("peeh").innerText = peeh;
+		document.getElementById("eet").innerText = eet;
+		document.getElementById("eee").innerText = eee;
+		document.getElementById("eeth").innerText = eeth;
+		document.getElementById("eeeh").innerText = eeeh;
+		document.getElementById("cantidad").innerText = cantidad;
+	}
+	
+	function start_page(){
+		if(!corriendo){
+			interval = setInterval(update, 5000);
+			corriendo = true;
+			alert("corriendo");
+		}
+		
+	}
+	
+	function openFullscreen() {
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		} else if (elem.mozRequestFullScreen) { /* Firefox */
+			elem.mozRequestFullScreen();
+		} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+			elem.webkitRequestFullscreen();
+		} else if (elem.msRequestFullscreen) { /* IE/Edge */
+			elem.msRequestFullscreen();
+		}
+	}
+	
+	//tomar valores desde Open Energy Monitor
+	
+
+// Called whenever the readyState attribute changes 
+function xhr_load() {
+	
+	alert("load");
+	
+  var xmlhttp = new XMLHttpRequest();
+
+  xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+	  alert("con conexion");
+    myObj = JSON.parse(this.responseText);
+    document.getElementById("pet").innerHTML = myObj.name;
+  }
+  else(){
+	alert("sin conexion");
+  }
+};
+xmlhttp.open("GET", "tomarDatos.php", true);
+xmlhttp.send();
+}
+
+
+
+// Function that formats the string with HTML tags, then outputs the result
+function showData(data) {
+    
+    pet = data[0].value;
+	peth = data[1].value;
+	peeh = data[2].value;
+	eet = data[3].value;
+	eee = data[4].value;
+	eeth = data[5].value;
+	eeeh = data[6].value;
+	cantidad = data[5].value;
+	//alert("asignacion");
+	
+}
