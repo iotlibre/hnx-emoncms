@@ -91,7 +91,8 @@ function peticionDatos() {
 		//alert(eeeh);
 
 		// cantidad = vectorOEM[8];
-    cantidad = 18322 + (vectorOEM[6]/10);
+    // cantidad = 18322 + (vectorOEM[6]/10);
+		cantidad = 18322;
 		//alert(cantidad);
 
    }
