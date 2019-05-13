@@ -61,38 +61,38 @@ function peticionDatos() {
 		//pet = vectorOEM[0];
     pulsos = vectorOEM[6];
     pulsos_intervalo = pulsos - pulsos_anterior;
-    pet = (pulsos_intervalo * 3) + 23.2;
+    pet = 111;
     pulsos_anterior = pulsos;
     //alert(pet);
 
 		//pee = vectorOEM[1];
-		pee = pet/2.11;
+		pee = 222;
 		//alert(pee);
 
-		peth = vectorOEM[6];
+		peth = 333;
 		//alert(peth);
 
 		//peeh = vectorOEM[2];
-    peeh = peth/2.31
+    peeh =444
 		//alert(peeh);
 
-		eet = vectorOEM[6]*7.12;
+		eet = 555;
 		//alert(eet);
 
     //eee = vectorOEM[5];
-    eee = eet/2.12;
+    eee = 666;
 		//alert(eee);
 
 		//eeth = vectorOEM[6];
-    eeth = vectorOEM[6]*0.458;
+    eeth = 777;
 		//alert(eeth);
 
-		eeeh = eeth/2.17;
+		eeeh = 888;
 		//alert(eeeh);
 
 		// cantidad = vectorOEM[8];
     // cantidad = 18322 + (vectorOEM[6]/10);
-		cantidad = 18322;
+		cantidad = 999;
 		//alert(cantidad);
 
    }
