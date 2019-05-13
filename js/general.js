@@ -98,7 +98,7 @@ function peticionDatos() {
    }
    else{
 	 //alert("sin conexion");
-	 cantidad = 33333;
+	 // cantidad = 33333;
    }
  };
  xmlhttp.open("GET", "tomarDatos.php", true);
