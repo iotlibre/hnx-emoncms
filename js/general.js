@@ -55,25 +55,23 @@ function peticionDatos() {
 
    xmlhttp.onreadystatechange = function() {
    if (this.readyState == 4 && this.status == 200) {
-	    //alert("Recibido!");
-		var vectorOEM = JSON.parse(this.responseText);
-
-		//pet = vectorOEM[0];
-    pulsos = vectorOEM[6];
+    // alert("Recibido!");
+    var vectorOEM = JSON.parse(this.responseText);
+    pulsos = vectorOEM[0];
     pulsos_intervalo = pulsos - pulsos_anterior;
-    pet = 111;
+
+    pet = vectorOEM[0];
     pulsos_anterior = pulsos;
     //alert(pet);
 
-		//pee = vectorOEM[1];
-		pee = 222;
+    pee =vectorOEM[1];
 		//alert(pee);
 
 		peth = 333;
 		//alert(peth);
 
 		//peeh = vectorOEM[2];
-    peeh =444
+    peeh =444;
 		//alert(peeh);
 
 		eet = 555;
