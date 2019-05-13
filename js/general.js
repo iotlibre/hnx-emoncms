@@ -1,4 +1,4 @@
-	
+
 	var elem = document.documentElement;
 	var corriendo = false;
 	var interval;
@@ -15,13 +15,13 @@
   var pulsos = 0;
   var pulsos_anterior = 0;
   var pulsos_intervalo = 0;
-	
 
-		
+
+
 	function update(){
-		
+
 		peticionDatos();
-		
+
 		document.getElementById("pet").innerText = pet.toFixed(2) + " kWh";
 		 document.getElementById("pee").innerText = pee.toFixed(2)  + " kWh";
 		 document.getElementById("peth").innerText = peth.toFixed(2)  + " kWh";
@@ -32,7 +32,7 @@
 		 document.getElementById("eeeh").innerText = eeeh.toFixed(2)  + " Kg";
 		 document.getElementById("cantidad").innerText = cantidad.toFixed(0);
 	}
-	
+
 	function openFullscreen() { // peticion pantalla completa
 		if (elem.requestFullscreen) {
 			elem.requestFullscreen();
@@ -44,13 +44,13 @@
 			elem.msRequestFullscreen();
 		}
 	}
-	
+
 	//tomar valores desde Open Energy Monitor
-	
+
 function peticionDatos() {
-	
+
 	//alert("peticion");
-	
+
    var xmlhttp = new XMLHttpRequest();
 
    xmlhttp.onreadystatechange = function() {
@@ -59,7 +59,7 @@ function peticionDatos() {
 		var vectorOEM = JSON.parse(this.responseText);
 
 		//pet = vectorOEM[0];
-    pulsos = vectorOEM[2];
+    pulsos = vectorOEM[6];
     pulsos_intervalo = pulsos - pulsos_anterior;
     pet = (pulsos_intervalo * 3) + 23.2;
     pulsos_anterior = pulsos;
@@ -69,29 +69,29 @@ function peticionDatos() {
 		pee = pet/2.11;
 		//alert(pee);
 
-		peth = vectorOEM[2];
+		peth = vectorOEM[6];
 		//alert(peth);
 
 		//peeh = vectorOEM[2];
     peeh = peth/2.31
 		//alert(peeh);
 
-		eet = vectorOEM[2]*7.12;
+		eet = vectorOEM[6]*7.12;
 		//alert(eet);
-		
+
     //eee = vectorOEM[5];
     eee = eet/2.12;
 		//alert(eee);
 
 		//eeth = vectorOEM[6];
-    eeth = vectorOEM[2]*0.458;
+    eeth = vectorOEM[6]*0.458;
 		//alert(eeth);
 
 		eeeh = eeth/2.17;
 		//alert(eeeh);
 
 		// cantidad = vectorOEM[8];
-    cantidad = 18322 + (vectorOEM[2]/10);
+    cantidad = 18322 + (vectorOEM[6]/10);
 		//alert(cantidad);
 
    }
