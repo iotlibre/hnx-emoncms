@@ -62,38 +62,25 @@ function peticionDatos() {
 
     pet = vectorOEM[0];
     pulsos_anterior = pulsos;
-    //alert(pet);
 
-    pee =vectorOEM[1];
-		//alert(pee);
+    pee =  vectorOEM[1];
 
-		peth = 333;
-		//alert(peth);
+    peth = vectorOEM[2];
 
-		//peeh = vectorOEM[2];
-    peeh =444;
-		//alert(peeh);
+    peeh = vectorOEM[3];
 
-		eet = 555;
-		//alert(eet);
+    eet =  vectorOEM[4];
 
-    //eee = vectorOEM[5];
-    eee = 666;
-		//alert(eee);
+    eee =  vectorOEM[5];
 
-		//eeth = vectorOEM[6];
-    eeth = 777;
-		//alert(eeth);
+    eeth = vectorOEM[6];
 
-		eeeh = 888;
-		//alert(eeeh);
+    eeeh = vectorOEM[7];
 
-		// cantidad = vectorOEM[8];
-    // cantidad = 18322 + (vectorOEM[6]/10);
-		cantidad = 999;
-		//alert(cantidad);
+    cantidad = vectorOEM[8];
 
    }
+
    else{
 	 //alert("sin conexion");
 	 // cantidad = 33333;
